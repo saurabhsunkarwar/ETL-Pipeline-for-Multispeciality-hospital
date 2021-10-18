@@ -9,11 +9,11 @@ Performed ETL on covid data
 
 
 #Apache Hadoop:
-version: hadoop-3.3.1
+1)Version: hadoop-3.3.1
 It provides a software framework for distributed storage and processing of big data using the MapReduce programming model.
 
 #Apache Hive:
-version: hive-2.3.8
+1)Version: hive-2.3.8
 Apache Hive is a data warehouse software project built on top of Apache Hadoop for providing data query and analysis. Hive gives an SQL-like interface to query data stored in various databases and file systems that integrate with Hadoop.
 
 # Steps followed during the process:
