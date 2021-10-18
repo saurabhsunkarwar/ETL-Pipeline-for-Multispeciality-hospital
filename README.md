@@ -18,13 +18,13 @@ Apache Hive is a data warehouse software project built on top of Apache Hadoop f
 
 # Steps followed during the process:
 1) Open the terminal and start the hadoop cluster by giving following commands:
-start-dfs.sh
-start-yarn.sh
+'''start-dfs.sh
+start-yarn.sh'''
 
 2)Check the namenode and datanodes are up and running by giving following command:
-jps
+'''jps'''
 
 3) Start Hive from where its installed:
-./bin/hive
+'''./bin/hive'''
 
 4)Execute the commands provided in hive_queries.txt file
