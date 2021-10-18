@@ -33,3 +33,8 @@ start-yarn.sh'''
 '''./bin/hive'''
 
 4)Execute the commands provided in hive_queries.txt file
+
+5)Check the location of the partitioned table by giving following command:
+
+Note: Here we are using the CLI of ubuntu
+'''hdfs dfs -ls /user/hive/warehouse/transformation.db/country_part'''
