@@ -1,0 +1,57 @@
+
+
+####Queries used in hive####
+
+# database for loading the raw data  
+hive> create database extraction;
+
+#using the extraction database
+hive> use extraction;
+
+#creating table for storing incoming data
+hive> create table covid_data_patient(Customer_Name string, Customer_ID int, Customer_Open_Date string, Last_Consulted_Date string, 
+Vacination_Type string, Doctor_Consulted string, State string, Country string, Post_Code int, Date_Of_Birth string,
+ Active_Customer string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '|';
+
+#loading the data into 'covid_data_patient' table
+hive> LOAD DATA LOCAL INPATH '/home/sabby/incoming_data.txt' INTO TABLE covid_data_patient; 
+
+# database for transforming the data
+hive> create database transformation;
+hive> use transformation;
+
+#creating table for trasnformation
+hive> create table trans_covid_data_patient(Customer_Name string, Customer_ID int, Customer_Open_Date string,
+    > Last_Consulted_Date string,Vacination_Type string, Doctor_Consulted string, State string, Country string,
+    > Post_Code int, Date_Of_Birth string,
+    > Active_Customer string)ROW FORMAT DELIMITED FIELDS TERMINATED BY '|';
+
+#loading the data
+hive> LOAD DATA LOCAL INPATH '/home/sabby/incoming_data.txt' INTO TABLE trans_covid_data_patient;
+Loading data to table transformation.trans_covid_data_patient
+
+hive> create table country_part(Customer_Name string, Customer_ID int, Customer_Open_Date string,
+    > Last_Consulted_Date string,Vacination_Type string, Doctor_Consulted string, State string,
+    > Post_Code int, Date_Of_Birth string,Active_Customer string)
+    > PARTITIONED BY (Country string);
+
+
+#partitioning the data Country wise
+hive> INSERT OVERWRITE TABLE country_part PARTITION(Country)
+    > SELECT Customer_Name, Customer_ID, Customer_Open_Date,Last_Consulted_Date,Vacination_Type,
+    > Doctor_Consulted, State,Country, Post_Code, Date_Of_Birth, Active_Customer from trans_covid_data_patient;
+
+
+
+#For partition we have to set this property
+set hive.exec.dynamic.partition.mode=nonstrict
+
+
+
+
+# database for storing clean data
+hive> create database good_data;
+
+
+
+
