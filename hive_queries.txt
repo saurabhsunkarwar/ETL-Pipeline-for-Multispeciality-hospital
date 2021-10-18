@@ -46,6 +46,14 @@ hive> INSERT OVERWRITE TABLE country_part PARTITION(Country)
 #For partition we have to set this property
 set hive.exec.dynamic.partition.mode=nonstrict
 
+#Exporting the created partitioned data to local system
+hive> set hive.cli.print.header=true;
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/home/sabby/incu_covid_data' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+    > SELECT *FROM transformation.country_part;
+    
+ 
+
+
 
 
 
