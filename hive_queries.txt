@@ -49,8 +49,6 @@ set hive.exec.dynamic.partition.mode=nonstrict
 
 
 
-# database for storing clean data
-hive> create database good_data;
 
 
 
