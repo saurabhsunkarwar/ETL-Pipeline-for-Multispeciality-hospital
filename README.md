@@ -38,3 +38,9 @@ start-yarn.sh'''
 
 Note: Here we are using the CLI of ubuntu
 '''hdfs dfs -ls /user/hive/warehouse/transformation.db/country_part'''
+
+6)Creating output directory for retrieving the data
+
+'''mkdir /home/sabby/incu_covid_data'''
+Note: Here the output will be stored in 'incu_covid_data' directory
+
