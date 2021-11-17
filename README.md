@@ -1,4 +1,4 @@
-# healthcare_incubyte_asgn
+# healthcare_assignment
 Performed ETL on covid data
 
 
