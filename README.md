@@ -1,4 +1,4 @@
-# healthcare_assignment
+# healthcare_project
 Performed ETL on covid data
 
 
