@@ -1,11 +1,12 @@
 Problem statement:
 
-Client owns a Multi-Specialty Hospital chain with locations all across the world. Hospital is currently working with government to help vaccinate people across the globe. 
-Patients currently opting for the services are given a access card which will be accessible across the globe. The data generated from admissions are currently kept in a single database.
+Client owns a Multi-Specialty Hospital chain with locations all across the world.
+Hospital is currently working with government to help vaccinate people across the globe. 
+Patients currently opting for the services are given a access card which will be accessible across the globe.
+The data generated from admissions are currently kept in a single database.
 There are heaps of customers and traditional database is on the verge of collapsing.
 
 Requirement :
-To pull the customers as per Country so that the developers should know what are all the places the Customer Data is available. Also the data extracting will be done by the hospitals Source System. They
-will pull all the relevant customer data and will give us a Data file.
-
-Design document :
+To pull the customers as per Country so that the developers should know what are all the places the Customer Data is available.
+Also the data extracting will be done by the hospitals Source System.
+They will pull all the relevant customer data and will give us a Data file.
